@@ -15,7 +15,7 @@ export class cognito_stack extends Stack {
 
     const pool = new cognito.UserPool(this, "default_pool");
     const client = pool.addClient("default_client", {
-      accessTokenValidity: Duration.days(1),
+      idTokenValidity: Duration.days(1),
       authFlows: { userPassword: true },
       generateSecret: false,
     });
