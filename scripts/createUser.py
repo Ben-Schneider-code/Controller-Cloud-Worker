@@ -2,6 +2,8 @@
 
 import os
 import json
+# aws cognito-idp admin-set-user-password --user-pool-id ""  --username "" --password "" --permanent
+# aws cognito-idp admin-create-user --user-pool-id ""  --username ""
 
 data = json.load(open( "../cognito.json"))
 create_user = 'aws cognito-idp admin-create-user --user-pool-id ' + data['userPoolId'] + '  --username "' + data['username'] + '"'
