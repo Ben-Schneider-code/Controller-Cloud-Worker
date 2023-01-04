@@ -8,7 +8,7 @@ import boto3
 data = json.load(open( "../cognito.json"))
 
 
-logn = boto3.client('cognito-idp', region_name="ca-central-1")
+logn = boto3.client('cognito-idp', region_name=data['region'])
 res = logn.initiate_auth(
     ClientId= data['userPoolClientId'],
     AuthFlow='USER_PASSWORD_AUTH',
@@ -19,7 +19,7 @@ res = logn.initiate_auth(
 )
 print(res)
 
-#logn = boto3.client('cognito-idp', region_name="ca-central-1")
+#logn = boto3.client('cognito-idp', region_name=data['region'])
 #res = logn.initiate_auth(
 #    ClientId= "XYZ",
 #    AuthFlow='REFRESH_TOKEN_AUTH',
